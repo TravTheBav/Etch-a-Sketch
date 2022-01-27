@@ -1,0 +1,41 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#border {
+    display: flex;
+    padding: 60px;
+    justify-content: center;
+    align-items: center;
+    background-color: tomato;
+    border-radius: 20px;
+}
+
+#container {
+    width: 400px;
+    height: 400px;
+    flex: 1, 1, auto;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+#row {
+    display: flex;
+    justify-content: stretch;
+    width: auto;
+    height: auto;
+    flex: auto;
+}
+
+.square {
+    background-color: tan;
+    flex: 1;
+}
