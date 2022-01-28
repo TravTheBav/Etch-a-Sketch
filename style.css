@@ -59,3 +59,7 @@ body {
     border-radius: 2px;
     border-color: #d3b50f;
 }
+
+.square.hovered {
+    background-color: black;
+}
