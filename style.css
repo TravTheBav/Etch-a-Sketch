@@ -11,7 +11,8 @@ body {
 
 #border {
     display: flex;
-    padding: 60px;
+    flex-direction: column;
+    padding-top: 100px;
     justify-content: center;
     align-items: center;
     background-color: tomato;
@@ -19,12 +20,27 @@ body {
 }
 
 #container {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     flex: 1, 1, auto;
     display: flex; 
     flex-direction: column;
     justify-content: center;
+}
+
+#knobs {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+
+#knob {
+    height: 100px;
+    width: 100px;
+    background-color: white;
+    border-radius: 50%;
+    margin: 14px;
+    background-image: radial-gradient(black 0%, white 5%, grey 80%);
 }
 
 #row {
@@ -38,4 +54,8 @@ body {
 .square {
     background-color: tan;
     flex: 1;
+    border: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: #d3b50f;
 }
