@@ -6,16 +6,20 @@ function createGrid(length) {
             const square = document.createElement("div");
             square.className = "square";
             square.addEventListener("mouseover", () => {
-                if (drawingMode == "normal") {
-                    square.classList.add("hovered");
-                }   else if (drawingMode == "rainbow") {
-                    square.style.backgroundColor = generateRandomRGB();
-                }    
+                initSquareEventListeners(square); 
                 }, {once: true});
             row.appendChild(square);
         }
         document.getElementById("container").appendChild(row);
     }
+}
+
+function initSquareEventListeners(square) {
+    if (drawingMode == "normal") {
+        square.style.backgroundColor = 'black';
+    }   else if (drawingMode == "rainbow") {
+        square.style.backgroundColor = generateRandomRGB();
+    }   
 }
 
 function resetGrid() {
@@ -51,6 +55,7 @@ function generateRandomRGB() {
 }
 
 let drawingMode = "normal";
+let shadingMode = false;
 const clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", resetGrid);
 const rainbowModeButton = document.getElementById("rainbow");
