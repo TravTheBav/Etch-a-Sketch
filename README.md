@@ -1,3 +1,9 @@
-#Using html/css/JS to make a responsive Etch-a-Sketch!
+An Etch-a-Sketch made with html, CSS, and JavaScript!
 
-In this project I used css/flexbox to make the Etch-a-Sketch look like a real life Etch-a-Sketch that responds to screen re-sizing. I also used JavaScript to make each "pixel" within the Etch-a-Sketch screen responsive so that when it is clicked it changes color.
+Hover your mouse over the Etch-a-Sketch grid to start drawing.
+When you want to clear the grid or change the grid size, just press
+the 'clear' button.
+
+Use shading mode to darken the pixels or rainbow mode for some interesting effects!
+
+Have fun!
