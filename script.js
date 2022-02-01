@@ -14,4 +14,19 @@ function createGrid(length) {
     }
 }
 
+function resetGrid() {
+    const length = parseInt(prompt("Enter a new grid length"));
+    let grid = document.getElementById("container");
+    removeAllChildNodes(grid);
+    createGrid(length);
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+const button = document.getElementById("clear");
+button.addEventListener("click", resetGrid);
 createGrid(16);
