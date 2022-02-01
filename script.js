@@ -6,8 +6,12 @@ function createGrid(length) {
             const square = document.createElement("div");
             square.className = "square";
             square.addEventListener("mouseover", () => {
+                if (drawingMode == "normal") {
                     square.classList.add("hovered");
-                }, { once: true});
+                }   else if (drawingMode == "rainbow") {
+                    square.style.backgroundColor = generateRandomRGB();
+                }    
+                }, {once: true});
             row.appendChild(square);
         }
         document.getElementById("container").appendChild(row);
@@ -33,6 +37,31 @@ function removeAllChildNodes(parent) {
     }
 }
 
-const button = document.getElementById("clear");
-button.addEventListener("click", resetGrid);
+function generateRandomRGB() {
+    let red = (Math.floor(Math.random() * 255)).toString(16);
+    let green = Math.floor(Math.random() * 255).toString(16);
+    let blue = Math.floor(Math.random() * 255).toString(16);
+    let rgb = [red, green, blue];
+    for (i = 0; i < 3; i++) {  // adds the prefixed 0 for single digit hex values
+        if (rgb[i].length == 1) {
+            rgb[i] = "0" + rgb[i];
+        }
+    }
+    return '#' + rgb[0] + rgb[1] + rgb[2];
+}
+
+let drawingMode = "normal";
+const clearButton = document.getElementById("clear");
+clearButton.addEventListener("click", resetGrid);
+const rainbowModeButton = document.getElementById("rainbow");
+rainbowModeButton.addEventListener("click", () => {
+    if (drawingMode != "rainbow") {
+        drawingMode = "rainbow";
+        rainbowModeButton.style.backgroundColor = '#6cff77'; 
+    }   else {
+        drawingMode = "normal";
+        rainbowModeButton.style.backgroundColor = '#EFEFEF';
+    }    
+});
+
 createGrid(16);
