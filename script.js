@@ -15,7 +15,13 @@ function createGrid(length) {
 }
 
 function resetGrid() {
-    const length = parseInt(prompt("Enter a new grid length"));
+    let length = parseInt(prompt("Enter a new grid length"));
+    if (length > 100) {
+        length = 100;
+    }
+    else if (Number.isNaN(length)) {
+        length = 16;
+    }
     let grid = document.getElementById("container");
     removeAllChildNodes(grid);
     createGrid(length);
